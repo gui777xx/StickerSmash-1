@@ -1,0 +1,11 @@
+git config --global user.name gallojunior
+git config --global user.email gallojunior@gmail.com
+
+npx create-expo-app@latest StickerSmash
+
+cd StickerSmash
+
+npm run reset-project
+n
+
+npx expo start --localhost --android
