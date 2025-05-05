@@ -5,7 +5,7 @@ export default function TabLayout() {
   return (
     <Tabs
       screenOptions={{
-        tabBarActiveTintColor: "#ffd33d",
+        tabBarActiveTintColor: "#ff0000", // Alterado para vermelho
         headerStyle: {
           backgroundColor: "#25292e",
         },

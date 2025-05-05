@@ -1,11 +1,12 @@
-git config --global user.name gallojunior
-git config --global user.email gallojunior@gmail.com
+Configuração da conta local do GIT
+git config --global user.name gui777x
+git config --global user.email guizin.clementino@gmail.com
 
-npx create-expo-app@latest StickerSmash
+git config --global user.name OmManiPadmeHumM
+git config --global user.email h3b1a6u08@gmail.com
 
 cd StickerSmash
 
-npm run reset-project
-
 npx expo start --localhost --android
 
+npm run reset-project
