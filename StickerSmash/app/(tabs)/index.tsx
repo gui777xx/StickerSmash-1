@@ -10,8 +10,6 @@ import { type ImageSource } from 'expo-image'
 import EmojiList from "@/components/EmojiList";
 import EmojiSticker from "@/components/EmojiSticker";
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import * as MediaLibrary from "expo-media-library";
-import { captureRef } from "react-native-view-shot";
 
 const PlaceholderImage = require("@/assets/images/background-image.png");
 
@@ -53,34 +51,20 @@ export default function Index() {
     setIsModalVisible(false);
   }
 
-  const onSaveImageAsync = async () => {
-    try {
-      const localUrl = await captureRef(imageRef, {
-        height: 440,
-        quality: 1,
-      });
+  const onSaveImageAsync = () => {
 
-      await MediaLibrary.saveToLibraryAsync(localUrl);
-      if (localUrl) {
-        alert("Imagem salva com sucesso!");
-      }
-    } catch (e) {
-      console.log(e);
-    }
   }
   return (
     <GestureHandlerRootView style={styles.container}>
       <View style={styles.imageContainer}>
-        <View ref={imageRef} collapsable={false}>
-          <ImageViewer
-            imgSource={PlaceholderImage}
-            selectedImage={selectedImage}
-          />
-          {
-            pickedEmoji &&
-            <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />
-          }
-        </View>
+        <ImageViewer
+          imgSource={PlaceholderImage}
+          selectedImage={selectedImage}
+        />
+        {
+          pickedEmoji && 
+          <EmojiSticker imageSize={40} stickerSource={pickedEmoji} />
+        }
       </View>
       {showAppOptions ? (
         <View style={styles.optionsContainer}>
